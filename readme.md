@@ -14,7 +14,7 @@ $ chmod -R 777 bootstrap/cache/
 $ php artisan serve
 ```
 
-![Laravel Initial Commit](public/images/development/laravel.png "Laravel Initial Commit")
+![Laravel Welcome Page](public/images/development/laravel-welcome-page.png)
 
 You should change some codes on .env file to connect database.
 ```
@@ -38,3 +38,23 @@ public function boot()
 You are ready for connecting database.
 
 ___
+
+If you want to use "Laravel Authentication", you should do below things.
+
+```
+$ php artisan migrate
+```
+```
+$ artisan make:auth
+```
+
+![Laravel Welcome Page With Auth](public/images/development/laravel-welcome-page-with-auth.png)
+
+![Laravel Log In Page](public/images/development/laravel-log-in-page.png)
+
+![Laravel Register Page](public/images/development/laravel-register-page.png)
+
+![Laravel Reset Password Page](public/images/development/laravel-reset-password-page.png)
+
+![Laravel Loged In Page](public/images/development/laravel-loged-in-page.png)
+
