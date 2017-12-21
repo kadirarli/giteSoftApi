@@ -1,4 +1,4 @@
-# giteSoftLaravel v2
+##Laravel Installation
 
 After running below commands in terminal, you will see the laravel welcome page.
 ```
@@ -15,6 +15,8 @@ $ php artisan serve
 ```
 
 ![Laravel Welcome Page](public/images/development/laravel-welcome-page.png)
+
+##Connect Database
 
 You should change some codes on .env file to connect database.
 ```
@@ -37,7 +39,7 @@ public function boot()
 
 You are ready for connecting database.
 
-___
+## Laravel Authentication
 
 If you want to use "Laravel Authentication", you should do below things.
 
@@ -58,3 +60,103 @@ $ artisan make:auth
 
 ![Laravel Loged In Page](public/images/development/laravel-loged-in-page.png)
 
+##Gite Soft Laravel Task
+
+Now, let's create project database tables by using laravel migration.
+
+###Tables
+
+- Movies Table. (Can have several genres and comments)
+```
+name [required]
+description [required]
+release_date [required]
+rating [required, 1 to 5]
+ticket_price [required]
+country_id [required]
+photo [required]
+slug [required]
+```
+- Genres Table
+```
+name [required]
+```
+- Movie's Genres Table
+```
+movie_id [required]
+genre_id [required]
+```
+- Comments Table
+```
+movie_id [required]
+name [required]
+comment [required]
+```
+- Country Table
+```
+name [required]
+```
+
+To create migrations files, type below commands.
+
+```
+$ php artisan make:migration create_movies_table --create=movies
+```
+```
+$ php artisan make:migration create_genres_table --create=genres
+```
+```
+$ php artisan make:migration create_movie_genres_table --create=movie_genres
+```
+```
+$ php artisan make:migration create_comments_table --create=comments
+```
+```
+$ php artisan make:migration create_countries_table --create=countries
+```
+
+After finishing tables migration's code, run below command.
+
+```
+$ php artisan migrate
+```
+
+Let's create Eloquent\Models of these tables.
+
+```
+$ php artisan make:model Movie
+```
+```
+$ php artisan make:model Genre
+```
+```
+$ php artisan make:model Comment
+```
+```
+$ php artisan make:model Country
+```
+
+Use countries.sql to fill countries table.
+Use genres.sql to fill genres table.
+
+And last process about database is DB SEED.
+
+```
+$ php artisan make:seeder MoviesTableSeeder
+```
+```
+$ php artisan make:seeder CommentsTableSeeder
+```
+
+After coding in table seeder files, you should run below codes.
+
+```
+$ php artisan db:seed --class=MoviesTableSeeder
+```
+```
+$ php artisan db:seed --class=CommentsTableSeeder
+```
+Or you can run below command
+```
+$ php artisan db:seed
+```
