@@ -20,4 +20,10 @@ class Movie extends Model
     {
         return $this->belongsToMany('App\Genre', 'movie_genres');
     }
+
+    public function setNameAttribute($value)
+    {
+        $this->attributes['name'] = $value;
+        $this->attributes['slug'] = str_slug($value);
+    }
 }

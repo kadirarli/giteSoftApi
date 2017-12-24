@@ -52,6 +52,7 @@ class MoviesTableSeeder extends Seeder
             $movie = new Movie;
             $moviesNameExampleKey = array_rand($movieNames);
             $filmName = $movieNames[$moviesNameExampleKey];
+            // unset for not select same name for movie
             unset($movieNames[$moviesNameExampleKey]);
             $movie->name = $filmName;
             $movie->description = $faker->paragraph;
@@ -66,11 +67,13 @@ class MoviesTableSeeder extends Seeder
             //insert genres for movies
             $genres = Genre::all()->toArray();
             $genresCount = rand(1,5);
-            // I used DB class, because i didn't create Movie Genres Class. (movie_denres is a pivot table)
             for ($j = 0; $j < $genresCount; $j++){
+                $genresKey = array_rand($genres);
                 DB::table('movie_genres')->insert(array(
-                    array('movie_id'=>$movie->id,'genre_id'=>$genres[array_rand($genres)]['id']),
+                    array('movie_id'=>$movie->id,'genre_id'=>$genres[$genresKey]['id']),
                 ));
+                // unset for not select same genre for movie
+                unset($genres[$genresKey]);
             }
         }
     }

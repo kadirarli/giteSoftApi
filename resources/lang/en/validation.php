@@ -98,6 +98,10 @@ return [
     | specify a specific custom language line for a given attribute rule.
     |
     */
+    'valid_country' => 'The :attribute must be a valid country.',
+    "valid_image_url" => "The :attribute must only has the image.",
+    "valid_genre" => 'The :attribute must be a valid genres.',
+    "distinct_comma" => 'The :attribute have the duplicate value.',
 
     'custom' => [
         'attribute-name' => [

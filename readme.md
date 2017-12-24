@@ -64,7 +64,7 @@ $ artisan make:auth
 
 Now, let's create project database tables by using laravel migration.
 
-###Tables
+###DB Processes (Tables, Migrations, Eloquent Models and DB Seed)
 
 - Movies Table. (Can have several genres and comments)
 ```
@@ -156,7 +156,25 @@ $ php artisan db:seed --class=MoviesTableSeeder
 ```
 $ php artisan db:seed --class=CommentsTableSeeder
 ```
+
 Or you can run below command
+
 ```
 $ php artisan db:seed
 ```
+
+###ApiControllers
+
+```
+$ php artisan make:controller MovieController
+```
+
+I used JSend rules for responses;
+```
+composer require shalvah/laravel-jsend
+```
+I used Intervention for managing image (imagick driver. To use, look http://ralbatross204.blogspot.sk/2013/11/getting-imagemagick-to-work-in-xampp-on.html)
+```
+composer require intervention/image
+```
+

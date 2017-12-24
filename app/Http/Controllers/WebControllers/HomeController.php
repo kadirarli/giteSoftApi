@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\WebControllers;
 
 use Illuminate\Http\Request;
 use App\Comment;
+use App\Http\Controllers\Controller;
 
 class HomeController extends Controller
 {
