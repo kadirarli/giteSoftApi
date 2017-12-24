@@ -184,3 +184,11 @@ I use Intervention for managing image
 ```
 Image::configure(array('driver' => 'imagick'));
 ```
+
+###Handle Errors For Api
+
+Header must contains below content type.
+```
+content-type → application/json
+```
+

@@ -88,7 +88,7 @@ class MovieController extends Controller
         }
 
         // response
-        return jsend_success($movie::with(['country','genres'])->find($movie->id));
+        return jsend_success($movie::with(['country','genres'])->findOrFail($movie->id));
 
     }
 
@@ -102,7 +102,7 @@ class MovieController extends Controller
     public function show($movie_id)
     {
         // find movie by using movie_id
-        $movie = Movie::with(['country','genres'])->find($movie_id);
+        $movie = Movie::with(['country','genres'])->findOrFail($movie_id);
 
         // response
         return jsend_success($movie);
@@ -142,7 +142,7 @@ class MovieController extends Controller
         $moviePhotoURL = URL::to('/').'/images/movie/'.$moviePhotoName;
 
         // save movie
-        $movie = Movie::find($movie_id);
+        $movie = Movie::findOrFail($movie_id);
         $movie->name = $request->name;
         $movie->description = $request->description;
         $movie->release_date = $request->release_date;
@@ -163,7 +163,7 @@ class MovieController extends Controller
         }
 
         // response
-        return jsend_success($movie::with(['country','genres'])->find($movie->id));
+        return jsend_success($movie::with(['country','genres'])->findOrFail($movie->id));
     }
 
     /**
@@ -176,10 +176,10 @@ class MovieController extends Controller
     public function destroy($id)
     {
         // delete movie
-        $movie = Movie::find($id);
+        $movie = Movie::findOrFail($id);
         $movie->delete();
 
         // response
-        return jsend_success($movie::with(['country','genres'])->find($movie->id));
+        return jsend_success();
     }
 }
