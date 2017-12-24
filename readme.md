@@ -169,12 +169,18 @@ $ php artisan db:seed
 $ php artisan make:controller MovieController
 ```
 
-I used JSend rules for responses;
 ```
 composer require shalvah/laravel-jsend
 ```
-I used Intervention for managing image (imagick driver. To use, look http://ralbatross204.blogspot.sk/2013/11/getting-imagemagick-to-work-in-xampp-on.html)
+I use JSend rules for responses;
+
 ```
 composer require intervention/image
 ```
 
+I use Intervention for managing image 
+- if you want to use imagick driver. To use, look http://ralbatross204.blogspot.sk/2013/11/getting-imagemagick-to-work-in-xampp-on.html
+- if you want to use gd driver (dafault), you should uncomment below code in App\Http\Controllers\ApiControllers\MovieController
+```
+Image::configure(array('driver' => 'imagick'));
+```
