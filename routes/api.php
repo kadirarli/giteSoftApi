@@ -19,12 +19,12 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 // Movies CRUD
 // Create
-Route::post('/movies',              'ApiControllers\MovieController@store')->name('movies.store');
+Route::post('/movies',              'ApiControllers\MovieController@store')->name('movies.store')->middleware('auth:api');
 // Read
-Route::get('/movies',               'ApiControllers\MovieController@index')->name('movies.index');
-Route::get('/movies/{movie}',       'ApiControllers\MovieController@show')->name('movies.show');
+Route::get('/movies',               'ApiControllers\MovieController@index')->name('movies.index')->middleware('auth:api');
+Route::get('/movies/{movie}',       'ApiControllers\MovieController@show')->name('movies.show')->middleware('auth:api');
 // Update
-Route::put('/movies/{movie}',       'ApiControllers\MovieController@update')->name('movies.update');
+Route::put('/movies/{movie}',       'ApiControllers\MovieController@update')->name('movies.update')->middleware('auth:api');
 // Delete
-Route::delete('/movies/{movie}',    'ApiControllers\MovieController@destroy')->name('movies.destroy');
+Route::delete('/movies/{movie}',    'ApiControllers\MovieController@destroy')->name('movies.destroy')->middleware('auth:api');
 

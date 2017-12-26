@@ -170,12 +170,12 @@ $ php artisan make:controller MovieController
 ```
 
 ```
-composer require shalvah/laravel-jsend
+$ composer require shalvah/laravel-jsend
 ```
 I use JSend rules for responses;
 
 ```
-composer require intervention/image
+$ composer require intervention/image
 ```
 
 I use Intervention for managing image 
@@ -192,3 +192,28 @@ Header must contains below content type.
 content-type → application/json
 ```
 
+###Auth for api
+```
+$ composer require laravel/passport
+```
+```
+$ php artisan migrate
+```
+```
+$ php artisan passport:install
+```
+```
+$ php artisan vendor:publish --tag=passport-components
+```
+```
+$ npm install
+```
+```
+$ npm run dev
+```
+```
+$ php artisan passport:keys
+```
+```
+$ php artisan make:controller SettingsController
+```

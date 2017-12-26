@@ -11,10 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// home
+Route::get('/',         'WebControllers\HomeController@index')->name('home');
 
+// auth routes
 Auth::routes();
 
-Route::get('/home', 'WebControllers\HomeController@index')->name('home');
+// admin
+Route::get('/admin',    'WebControllers\AdminController@index')->name('admin');
+
+// settings
+Route::get('/settings', 'WebControllers\SettingsController@index')->name('settings')->middleware('auth');
