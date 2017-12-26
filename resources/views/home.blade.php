@@ -83,7 +83,7 @@
                 </div>
 
                 <div class="links">
-                    <a href="https://github.com/kadirarli/giteSoftApi/blob/master/README.md">Documentation</a>
+                    <a href="https://github.com/kadirarli/giteSoftApi/blob/master/readme.md">Documentation</a>
                     <a href="https://github.com/kadirarli/giteSoftApi/blob/master/HowToRun.md">How To Run</a>
                     <a href="https://github.com/kadirarli/giteSoftApi">GitHub</a>
                 </div>
