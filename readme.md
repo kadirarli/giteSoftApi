@@ -1,4 +1,4 @@
-##Laravel Installation
+## Laravel Installation
 
 After running below commands in terminal, you will see the laravel welcome page.
 ```
@@ -16,7 +16,7 @@ $ php artisan serve
 
 ![Laravel Welcome Page](public/images/development/laravel-welcome-page.png)
 
-##Connect Database
+## Connect Database
 
 You should change some codes on .env file to connect database.
 ```
@@ -60,11 +60,11 @@ $ artisan make:auth
 
 ![Laravel Loged In Page](public/images/development/laravel-loged-in-page.png)
 
-##Gite Soft Laravel Task
+## Gite Soft Laravel Task
 
 Now, let's create project database tables by using laravel migration.
 
-###DB Processes (Tables, Migrations, Eloquent Models and DB Seed)
+### DB Processes (Tables, Migrations, Eloquent Models and DB Seed)
 
 - Movies Table. (Can have several genres and comments)
 ```
@@ -163,7 +163,7 @@ Or you can run below command
 $ php artisan db:seed
 ```
 
-###ApiControllers
+### ApiControllers
 
 ```
 $ php artisan make:controller MovieController
@@ -192,7 +192,7 @@ Header must contains below content type.
 content-type → application/json
 ```
 
-###Auth for api
+### Auth for api
 ```
 $ composer require laravel/passport
 ```
